@@ -10,12 +10,9 @@
 
 typedef void (^ImagePickerBackBlock) (UIImage *originalImage, UIImage *cropImage);
 
-@interface ZMImagePickerSource : NSObject<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
+@interface ZMImagePickerSource : NSObject
 
-- (id)initWithViewController:(UIViewController *)paramVC andCallback:(ImagePickerBackBlock) callBackBlock;
-
-- (void)show;
-
-+ (void)chooseImageFromViewController:(UIViewController *) viewController CompletionHandler:(ImagePickerBackBlock ) handler;
-
++ (void)chooseImageFromViewController:(UIViewController *) viewController
+                         allowEditing:(BOOL) editing
+                    CompletionHandler:(ImagePickerBackBlock ) handler;
 @end

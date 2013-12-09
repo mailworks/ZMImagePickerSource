@@ -11,7 +11,6 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong ,nonatomic) ZMImagePickerSource *imageSource;
 
 @end
 
@@ -26,9 +25,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.imageSource = [[ZMImagePickerSource alloc] initWithViewController:self andCallback:^(UIImage *originalImage, UIImage *cropImage) {
-        self.imageView.image = cropImage;
-    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,10 +34,11 @@
 }
 
 - (IBAction)chooseImageClicked:(UIButton *)sender {
-//    [ZMImagePickerSource chooseImageFromViewController:self CompletionHandler:^(UIImage *originalImage, UIImage *cropImage) {
-//        self.imageView.image = cropImage;
-//    }];
-    [self.imageSource show];
+    
+    [ZMImagePickerSource chooseImageFromViewController:self allowEditing:YES CompletionHandler:^(UIImage *originalImage, UIImage *cropImage) {
+        self.imageView.image = cropImage;
+    }];
+    
 }
 
 

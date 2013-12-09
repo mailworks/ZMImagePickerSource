@@ -7,6 +7,9 @@
 //
 
 #import "ZMImagePickerSource.h"
+#import "ZMActionSheetBlock.h"
+#import "ZMImagePickerControllerBlock.h"
+
 @interface ZMImagePickerSource ()
 
 @property (nonatomic, copy) ImagePickerBackBlock callBackBlock;
@@ -31,85 +34,36 @@
     return self;
 }
 
-- (void)show{
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选取",nil];
-    [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    switch (buttonIndex) {
-        case 0:
-        {
-            [self presentImagePickerControllerType:UIImagePickerControllerSourceTypeCamera
-                                     allowsEditing:YES
-                          andPresentViewController:self.viewController];
-
-        }
-            break;
-            
-        case 1:
-        {
-            [self presentImagePickerControllerType:UIImagePickerControllerSourceTypePhotoLibrary
-                                     allowsEditing:YES
-                          andPresentViewController:self.viewController];
-        }
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)presentImagePickerControllerType:(UIImagePickerControllerSourceType) type
-                           allowsEditing:(BOOL) editing
-                andPresentViewController:(id)controller
-{
-    
-    if (type == UIImagePickerControllerSourceTypeCamera) {
-        if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-            NSLog(@"You device not camera");
-            return;
-        }
-    }
-    
-    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
-    picker.allowsEditing = editing;
-    picker.sourceType = type;
-    picker.delegate = self;
-    
-    if (!controller) {
-         // TODO: present from navigationController
-        
-    }
-    [controller presentModalViewController:picker animated:YES];
-}
-
-
-#pragma mark - Image picker
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
-    if ([type isEqual:@"public.image"] ) {
-        UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-        UIImage *editImage = [info objectForKey:UIImagePickerControllerEditedImage];
-        //        UIImage *scaleImage = [self scaleImage:editImage toScale:0.5];
-//        UIImage *scaleImage = [editImage thumbnailImage:80 transparentBorder:0 cornerRadius:0 interpolationQuality:kCGInterpolationDefault];
-        if (self.callBackBlock) {
-            self.callBackBlock(originalImage,editImage);
-        }
-    }
-    [self.viewController dismissModalViewControllerAnimated:YES];
-    
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [self.viewController dismissModalViewControllerAnimated:YES];
-}
-
-
-+ (void)chooseImageFromViewController:(UIViewController *) viewController CompletionHandler:(ImagePickerBackBlock ) handler;
++ (void)chooseImageFromViewController:(UIViewController *) viewController
+                         allowEditing:(BOOL) editing
+                    CompletionHandler:(ImagePickerBackBlock ) handler
 {
     ZMImagePickerSource *imagePickerSource = [[ZMImagePickerSource alloc] init];
     imagePickerSource.viewController = viewController;
     imagePickerSource.callBackBlock = handler;
-    [imagePickerSource show];
+    
+    ZMActionSheetBlock *actionSheet = [[ZMActionSheetBlock alloc]initWithTitle:nil delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选取",nil];
+    
+    [actionSheet showInView:viewController.view DissmissHandler:^(NSInteger selecedIndex) {
+        NSLog(@"selectedIndex:%d",selecedIndex);
+        
+        ZMImagePickerControllerBlock *imagePicker = [[ZMImagePickerControllerBlock alloc] init];
+        imagePicker.allowsEditing = editing;
+        if (0 == selecedIndex) {
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        } else if (1 == selecedIndex) {
+            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        
+        [imagePicker showWithModalViewController:imagePickerSource.viewController animated:YES selectedHandler:^(UIImage *image, NSDictionary *info, BOOL *dismiss) {
+            imagePickerSource.callBackBlock(image,image);
+        } cancel:^{
+            NSLog(@"ZMImagePickerControllerBlock cancel");
+        }];
+        
+    } cancelHandler:^{
+        NSLog(@"actionsheet cancel");
+    }];
+
 }
 @end
