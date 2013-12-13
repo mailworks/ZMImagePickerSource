@@ -9,6 +9,7 @@
 #import "ZMImagePickerSource.h"
 #import "ZMActionSheetBlock.h"
 #import "ZMImagePickerControllerBlock.h"
+#import "UIImage+ResizeImage.h"
 
 @interface ZMImagePickerSource ()
 
@@ -24,18 +25,9 @@
   NSLog(@"ZMImagePickerSource dealloc");
 }
 
-
-- (id)initWithViewController:(UIViewController *)paramVC andCallback:(ImagePickerBackBlock) callBackBlock{
-    self = [super init];
-    if (self) {
-        self.viewController = paramVC;
-        self.callBackBlock = [callBackBlock copy];
-    }
-    return self;
-}
-
 + (void)chooseImageFromViewController:(UIViewController *) viewController
                          allowEditing:(BOOL) editing
+                   imageMaxSizeLength:(CGFloat)lenght
                     CompletionHandler:(ImagePickerBackBlock ) handler
 {
     ZMImagePickerSource *imagePickerSource = [[ZMImagePickerSource alloc] init];
@@ -56,7 +48,15 @@
         }
         
         [imagePicker showWithModalViewController:imagePickerSource.viewController animated:YES selectedHandler:^(UIImage *image, NSDictionary *info, BOOL *dismiss) {
-            imagePickerSource.callBackBlock(image,image);
+            //resize image
+            UIImage *lastImage = nil;
+            if (lenght > 0) {
+                lastImage = [image imageWithMaxSide:lenght];
+            } else {
+                lastImage = image;
+            }
+            imagePickerSource.callBackBlock(lastImage,info,dismiss);
+            
         } cancel:^{
             NSLog(@"ZMImagePickerControllerBlock cancel");
         }];
@@ -66,4 +66,6 @@
     }];
 
 }
+
+
 @end

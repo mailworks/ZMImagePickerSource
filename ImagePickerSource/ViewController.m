@@ -34,9 +34,9 @@
 }
 
 - (IBAction)chooseImageClicked:(UIButton *)sender {
-    
-    [ZMImagePickerSource chooseImageFromViewController:self allowEditing:YES CompletionHandler:^(UIImage *originalImage, UIImage *cropImage) {
-        self.imageView.image = cropImage;
+    [ZMImagePickerSource chooseImageFromViewController:self allowEditing:YES imageMaxSizeLength:100 CompletionHandler:^(UIImage *image, NSDictionary *pickingMediainfo, BOOL *dismiss) {
+        self.imageView.image = image;
+        NSLog(@"imgeSize:%@",NSStringFromCGSize(image.size));
     }];
     
 }
