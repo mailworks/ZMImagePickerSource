@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Lion. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #if !__has_feature(objc_arc)
 #error This is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
