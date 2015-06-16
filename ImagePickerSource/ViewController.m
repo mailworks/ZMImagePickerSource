@@ -34,15 +34,23 @@
 }
 
 - (IBAction)chooseImageClicked:(UIButton *)sender {
-    [ZMImagePickerSource chooseImageFromViewController:self allowEditing:YES imageMaxSizeLength:100 CompletionHandler:^(UIImage *image, NSDictionary *pickingMediainfo, BOOL *dismiss) {
+    
+    [ZMImagePickerSource chooseImageFromViewController:self
+                                          allowEditing:YES
+                                    imageMaxSizeLength:100
+                                     CompletionHandler:^(UIImage *image, NSDictionary *pickingMediainfo, BOOL *dismiss) {
+                                         
         self.imageView.image = image;
         NSLog(@"imgeSize:%@",NSStringFromCGSize(image.size));
+                                         
     }];
     
 }
 
 
 - (IBAction)backBtnClicked:(UIButton *)sender {
+    
     [[self presentingViewController] dismissModalViewControllerAnimated:YES];
 }
+
 @end

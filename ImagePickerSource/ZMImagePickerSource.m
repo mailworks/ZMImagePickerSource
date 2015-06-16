@@ -34,9 +34,15 @@
     imagePickerSource.viewController = viewController;
     imagePickerSource.callBackBlock = handler;
     
-    ZMActionSheetBlock *actionSheet = [[ZMActionSheetBlock alloc]initWithTitle:nil delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选取",nil];
+    ZMActionSheetBlock *actionSheet = [[ZMActionSheetBlock alloc]initWithTitle:nil
+                                                                      delegate:nil
+                                                             cancelButtonTitle:@"取消"
+                                                        destructiveButtonTitle:nil
+                                                             otherButtonTitles:@"拍照",@"从相册选取",nil];
     
-    [actionSheet showInView:viewController.view DissmissHandler:^(NSInteger selecedIndex) {
+    [actionSheet showInView:viewController.view
+            DissmissHandler:^(NSInteger selecedIndex) {
+        
         NSLog(@"selectedIndex:%d",selecedIndex);
         
         ZMImagePickerControllerBlock *imagePicker = [[ZMImagePickerControllerBlock alloc] init];
@@ -47,7 +53,9 @@
             imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         }
         
-        [imagePicker showWithModalViewController:imagePickerSource.viewController animated:YES selectedHandler:^(UIImage *image, NSDictionary *info, BOOL *dismiss) {
+        [imagePicker showWithModalViewController:imagePickerSource.viewController
+                                        animated:YES
+                                 selectedHandler:^(UIImage *image, NSDictionary *info, BOOL *dismiss) {
             //resize image
             UIImage *lastImage = nil;
             if (lenght > 0) {
@@ -64,7 +72,6 @@
     } cancelHandler:^{
         NSLog(@"actionsheet cancel");
     }];
-
 }
 
 
