@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E2CCC13185ADD7E001631B0 /* UIImage+ResizeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CCC12185ADD7E001631B0 /* UIImage+ResizeImage.m */; };
 		0E62FFC81854C20700FB0DA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E62FFC71854C20700FB0DA8 /* Foundation.framework */; };
 		0E62FFCA1854C20700FB0DA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E62FFC91854C20700FB0DA8 /* CoreGraphics.framework */; };
 		0E62FFCC1854C20700FB0DA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E62FFCB1854C20700FB0DA8 /* UIKit.framework */; };
@@ -23,8 +22,6 @@
 		0E62FFF11854C20700FB0DA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E62FFEF1854C20700FB0DA8 /* InfoPlist.strings */; };
 		0E62FFF31854C20700FB0DA8 /* ImagePickerSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E62FFF21854C20700FB0DA8 /* ImagePickerSourceTests.m */; };
 		0E62FFFE1854C3B700FB0DA8 /* ZMImagePickerSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E62FFFD1854C3B700FB0DA8 /* ZMImagePickerSource.m */; };
-		0EBB160B185570CC000BC97B /* ZMActionSheetBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBB160A185570CC000BC97B /* ZMActionSheetBlock.m */; };
-		0EBB160E18557F1D000BC97B /* ZMImagePickerControllerBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBB160D18557F1D000BC97B /* ZMImagePickerControllerBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E2CCC11185ADD7E001631B0 /* UIImage+ResizeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ResizeImage.h"; sourceTree = "<group>"; };
-		0E2CCC12185ADD7E001631B0 /* UIImage+ResizeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ResizeImage.m"; sourceTree = "<group>"; };
 		0E62FFC41854C20700FB0DA8 /* ImagePickerSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePickerSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E62FFC71854C20700FB0DA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E62FFC91854C20700FB0DA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,10 +56,6 @@
 		0E62FFF21854C20700FB0DA8 /* ImagePickerSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePickerSourceTests.m; sourceTree = "<group>"; };
 		0E62FFFC1854C3B700FB0DA8 /* ZMImagePickerSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMImagePickerSource.h; sourceTree = "<group>"; };
 		0E62FFFD1854C3B700FB0DA8 /* ZMImagePickerSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMImagePickerSource.m; sourceTree = "<group>"; };
-		0EBB1609185570CC000BC97B /* ZMActionSheetBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMActionSheetBlock.h; sourceTree = "<group>"; };
-		0EBB160A185570CC000BC97B /* ZMActionSheetBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMActionSheetBlock.m; sourceTree = "<group>"; };
-		0EBB160C18557F1D000BC97B /* ZMImagePickerControllerBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMImagePickerControllerBlock.h; sourceTree = "<group>"; };
-		0EBB160D18557F1D000BC97B /* ZMImagePickerControllerBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMImagePickerControllerBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,12 +115,6 @@
 		0E62FFCD1854C20700FB0DA8 /* ImagePickerSource */ = {
 			isa = PBXGroup;
 			children = (
-				0E2CCC11185ADD7E001631B0 /* UIImage+ResizeImage.h */,
-				0E2CCC12185ADD7E001631B0 /* UIImage+ResizeImage.m */,
-				0EBB160C18557F1D000BC97B /* ZMImagePickerControllerBlock.h */,
-				0EBB160D18557F1D000BC97B /* ZMImagePickerControllerBlock.m */,
-				0EBB1609185570CC000BC97B /* ZMActionSheetBlock.h */,
-				0EBB160A185570CC000BC97B /* ZMActionSheetBlock.m */,
 				0E62FFFC1854C3B700FB0DA8 /* ZMImagePickerSource.h */,
 				0E62FFFD1854C3B700FB0DA8 /* ZMImagePickerSource.m */,
 				0E62FFD61854C20700FB0DA8 /* AppDelegate.h */,
@@ -270,11 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E62FFDE1854C20700FB0DA8 /* ViewController.m in Sources */,
-				0E2CCC13185ADD7E001631B0 /* UIImage+ResizeImage.m in Sources */,
 				0E62FFFE1854C3B700FB0DA8 /* ZMImagePickerSource.m in Sources */,
-				0EBB160E18557F1D000BC97B /* ZMImagePickerControllerBlock.m in Sources */,
 				0E62FFD81854C20700FB0DA8 /* AppDelegate.m in Sources */,
-				0EBB160B185570CC000BC97B /* ZMActionSheetBlock.m in Sources */,
 				0E62FFD41854C20700FB0DA8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
