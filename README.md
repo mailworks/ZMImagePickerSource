@@ -3,7 +3,7 @@ ZMImagePickerSource
 
 快速集成相册选择器
 #### 介绍：
-项目中经常需要从相册或者相机来选择照片，比如修改用户头像，有了它只需一句即可快速集成,可以将重复的代码移出控制器
+项目中经常需要从相册或者相机来选择照片，比如修改用户头像，一般会用到UIActionSheet来提示用户从相册或拍摄选取照片，根据用户的选择来调用UIImagePickerController选取相片，虽然实现起来简单但是写起来麻烦而且在Controller中会留下许多代码不利于维护，所以将UIActionSheet和UIImagePickerController简单封装起立这样仅需一行代码即可在Controller中快速集成。
 
 	    [ZMImagePickerSource chooseImageFromViewController:self
                                           allowEditing:YES
@@ -13,4 +13,4 @@ ZMImagePickerSource
         imgViewHeadimg.image = image;
         
     }];
-   首先会弹出UIActionSheet 提示用户选择从相册还是拍照选取照片
+  

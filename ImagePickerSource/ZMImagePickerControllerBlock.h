@@ -12,6 +12,7 @@ typedef void (^ZMImagePickerControllerSelectImageHandler) (UIImage *image, NSDic
 typedef void(^ZMImagePickerControllerCancelBlock) ();
 
 @interface ZMImagePickerControllerBlock : UIImagePickerController
+
 @property (nonatomic, copy) ZMImagePickerControllerSelectImageHandler selectedHandler;
 @property (nonatomic, copy) ZMImagePickerControllerCancelBlock cancelBlock;
 
