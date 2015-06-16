@@ -13,8 +13,6 @@ typedef void(^ZMImagePickerControllerCancelBlock) ();
 
 @interface ZMImagePickerControllerBlock : UIImagePickerController
 
-@property (nonatomic, copy) ZMImagePickerControllerSelectImageHandler selectedHandler;
-@property (nonatomic, copy) ZMImagePickerControllerCancelBlock cancelBlock;
 
 - (void)showWithModalViewController:(UIViewController *)modalViewController
                            animated:(BOOL)animated

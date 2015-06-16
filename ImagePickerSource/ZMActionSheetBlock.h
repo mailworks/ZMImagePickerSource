@@ -13,8 +13,7 @@ typedef void (^ZMActionSheetCancelHandler) ();
 
 
 @interface ZMActionSheetBlock : UIActionSheet
-@property (nonatomic, copy) ZMActionSheetDismissHandler dissmissHandler;
-@property (nonatomic, copy) ZMActionSheetCancelHandler cancelHandler;
+
 
 - (void)showInView:(UIView *)view
    DissmissHandler:(ZMActionSheetDismissHandler)dissmissHandler

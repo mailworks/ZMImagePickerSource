@@ -10,6 +10,9 @@
 
 @interface ZMImagePickerControllerBlock ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (nonatomic, copy) ZMImagePickerControllerSelectImageHandler selectedHandler;
+@property (nonatomic, copy) ZMImagePickerControllerCancelBlock cancelBlock;
+
 @end
 
 @implementation ZMImagePickerControllerBlock

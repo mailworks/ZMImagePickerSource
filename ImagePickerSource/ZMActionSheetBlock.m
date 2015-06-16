@@ -9,6 +9,8 @@
 #import "ZMActionSheetBlock.h"
 @interface ZMActionSheetBlock()<UIActionSheetDelegate>
 
+@property (nonatomic, copy) ZMActionSheetDismissHandler dissmissHandler;
+@property (nonatomic, copy) ZMActionSheetCancelHandler cancelHandler;
 
 @end
 
