@@ -22,6 +22,7 @@
 		0E62FFF11854C20700FB0DA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E62FFEF1854C20700FB0DA8 /* InfoPlist.strings */; };
 		0E62FFF31854C20700FB0DA8 /* ImagePickerSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E62FFF21854C20700FB0DA8 /* ImagePickerSourceTests.m */; };
 		0E62FFFE1854C3B700FB0DA8 /* ZMImagePickerSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E62FFFD1854C3B700FB0DA8 /* ZMImagePickerSource.m */; };
+		D98F25141E666B250011B527 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98F25131E666B250011B527 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		0E62FFF21854C20700FB0DA8 /* ImagePickerSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePickerSourceTests.m; sourceTree = "<group>"; };
 		0E62FFFC1854C3B700FB0DA8 /* ZMImagePickerSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMImagePickerSource.h; sourceTree = "<group>"; };
 		0E62FFFD1854C3B700FB0DA8 /* ZMImagePickerSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMImagePickerSource.m; sourceTree = "<group>"; };
+		D98F25131E666B250011B527 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				0E62FFD61854C20700FB0DA8 /* AppDelegate.h */,
 				0E62FFD71854C20700FB0DA8 /* AppDelegate.m */,
 				0E62FFD91854C20700FB0DA8 /* Main.storyboard */,
+				D98F25131E666B250011B527 /* LaunchScreen.storyboard */,
 				0E62FFDC1854C20700FB0DA8 /* ViewController.h */,
 				0E62FFDD1854C20700FB0DA8 /* ViewController.m */,
 				0E62FFDF1854C20700FB0DA8 /* Images.xcassets */,
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E62FFE01854C20700FB0DA8 /* Images.xcassets in Resources */,
+				D98F25141E666B250011B527 /* LaunchScreen.storyboard in Resources */,
 				0E62FFD21854C20700FB0DA8 /* InfoPlist.strings in Resources */,
 				0E62FFDB1854C20700FB0DA8 /* Main.storyboard in Resources */,
 			);
@@ -392,7 +396,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImagePickerSource/ImagePickerSource-Prefix.pch";
 				INFOPLIST_FILE = "ImagePickerSource/ImagePickerSource-Info.plist";
@@ -406,7 +409,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImagePickerSource/ImagePickerSource-Prefix.pch";
 				INFOPLIST_FILE = "ImagePickerSource/ImagePickerSource-Info.plist";
