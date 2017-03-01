@@ -62,7 +62,7 @@ UINavigationControllerDelegate
     self.selectedHandler  = slectedHandler;
     self.cancelBlock = cancelBlock;
     self.delegate = self;
-    [modalViewController presentModalViewController:self animated:animated];
+    [modalViewController presentViewController:self animated:animated completion:NULL];
 }
 
 
@@ -78,7 +78,7 @@ UINavigationControllerDelegate
         self.selectedHandler(editedImage,info,&dismiss);
     }
     if (dismiss) {
-        [picker dismissModalViewControllerAnimated:YES];
+        [picker dismissViewControllerAnimated:YES completion:NULL];
     }
 }
 
@@ -87,7 +87,7 @@ UINavigationControllerDelegate
     if (picker.cancelBlock) {
         picker.cancelBlock();
     }
-    [picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end
